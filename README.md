@@ -35,5 +35,6 @@ See tsconfig.json for the skinny.
 ## Get Started
 - Make sure you have Typescript and ts-node installed
 - Set up your MongoDB and .env files
+- create "dist" folder at root level
 - run npm install
 - have fun!
