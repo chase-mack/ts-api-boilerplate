@@ -13,6 +13,7 @@ See tsconfig.json for the skinny.
 ```
 .
 ├── dist                        // this is the output file where JS will be compiled
+├── node_modules
 ├── .env                        // you must create an .env for this project - existing ENV is for example only
 ├── .gitignore                  
 ├── package.json
@@ -38,3 +39,9 @@ See tsconfig.json for the skinny.
 - create "dist" folder at root level
 - run npm install
 - have fun!
+
+
+## TODO:
+- cors/like source validation
+- unit testing
+- update interface vs schema in TestModel
