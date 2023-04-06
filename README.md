@@ -23,7 +23,8 @@ See tsconfig.json for the skinny.
 │   ├── controllers             // business logic goes here. services may be added if needed
 │   │   └── testController.ts
 │   ├── models
-│   │   └── testModel.ts        // models are created with mongoose.model()
+│   │   └── testSchema.ts      // this is what Mongoose uses to choose collection within specified database
+│   │   └── testModel.ts       // this is an interface used to perform business logic on data
 │   ├── routes
 │   │   ├── not_found.ts        // this is a catch-all for bad URLs
 │   │   └── test_routes.ts
@@ -42,6 +43,12 @@ See tsconfig.json for the skinny.
 
 
 ## TODO:
-- cors/like source validation
+- source validation (see testController.ts for start)
+    - validate through API key in header
+    - will need to update and rotate API key to keep secure
+    - it would be a good idea to use Authentication (username, password) for GET, UPDATE, and DELETE requests
 - unit testing
-- update interface vs schema in TestModel
+    - create unitTest collection on mongodb
+    - use this data to test GET, POST, etc...
+    - Jest could be good option in saving a lot of time
+    - Jest will require configuration

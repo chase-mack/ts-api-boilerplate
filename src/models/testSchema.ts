@@ -8,4 +8,4 @@ const schema = new Schema({
     is_true: Boolean
 });
 
-export default mongoose.model('TestModel', schema);
+export default mongoose.model('TestModels', schema);

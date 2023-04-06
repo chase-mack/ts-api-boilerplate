@@ -1,11 +1,17 @@
 import { Request, Response } from 'express';
-import TestModel from '../models/testModel';
-// import TestSchema from '../models/testSchema'; // not needed if not running services??
+import TestModels from '../models/testSchema';
+// import { ITestModel }  from '../models/testModel';
+import { HEADER_SECRET } from '../config';
 
 export class TestController {
     public async getAll(req: Request, res: Response) {
+        // break out into lib?
+        if (req.headers.header_secret !== HEADER_SECRET) {
+            res.status(500).json({message: "Permission Denied"});
+            return;
+        }
         try {
-            const data = await TestModel.find();
+            const data = await TestModels.find();
             res.json(data);
             console.log("Get All TestModels was successful!")
         }
@@ -16,7 +22,7 @@ export class TestController {
 
     public async getOne(req: Request, res: Response) {
         try {
-            const data = await TestModel.findById(req.params.id)
+            const data = await TestModels.findById(req.params.id)
             res.json(data);
             console.log(`${data.name} was got!`)
         }
@@ -26,7 +32,7 @@ export class TestController {
     }
 
     public async create(req: Request, res: Response) {
-        const data = new TestModel({
+        const data = new TestModels({
             name: req.body.name,
             phone: req.body.phone,
             is_true: req.body.is_true
@@ -47,7 +53,7 @@ export class TestController {
             const updatedData = req.body;
             const options = { new: true }; // returns updated data in the response
     
-            const result = await TestModel.findOneAndUpdate(id, updatedData, options);
+            const result = await TestModels.findOneAndUpdate(id, updatedData, options);
             res.send(result);
             console.log(`Updated ${id._id}`);
         }
@@ -59,7 +65,7 @@ export class TestController {
     public async delete(req: Request, res: Response) {
         try {
             const id = req.params.id;
-            const result = await TestModel.findByIdAndDelete(id);
+            const result = await TestModels.findByIdAndDelete(id);
             res.send(result);
             console.log(`Deleted ${id}`);
         }
