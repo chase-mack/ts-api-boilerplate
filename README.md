@@ -31,7 +31,10 @@ See tsconfig.json for the skinny.
 │   ├── app.ts                  // here is where the application starts
 │   ├── config.ts               // this consumes your .env file
 │   └── server.ts               // this is the entry point as defined in package.json
-└── tsconfig.json
+├── tsconfig.json
+├── jest.config.js              // required to configure jest and typescript
+└── tests       
+
 ```
 
 ## Get Started
