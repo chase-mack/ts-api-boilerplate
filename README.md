@@ -49,6 +49,4 @@ See tsconfig.json for the skinny.
     - it would be a good idea to use Authentication (username, password) for GET, UPDATE, and DELETE requests
 - unit testing
     - create unitTest collection on mongodb
-    - use this data to test GET, POST, etc...
-    - Jest could be good option in saving a lot of time
-    - Jest will require configuration
+    - use this data to test GET, POST, etc... (jest has been configured)

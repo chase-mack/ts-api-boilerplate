@@ -6,3 +6,5 @@ export interface ITestModel {
     phone: string,
     is_true: boolean
 }
+
+// it may also be worth placing Schema directly underneath the interface in one file
