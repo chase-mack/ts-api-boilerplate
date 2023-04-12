@@ -33,7 +33,7 @@ See tsconfig.json for the skinny.
 │   └── server.ts               // this is the entry point as defined in package.json
 ├── tsconfig.json
 ├── jest.config.js              // required to configure jest and typescript
-└── tests       
+└── tests                       // jest and supertest to test API endpoints
 
 ```
 
@@ -51,5 +51,5 @@ See tsconfig.json for the skinny.
     - will need to update and rotate API key to keep secure
     - it would be a good idea to use Authentication (username, password) for GET, UPDATE, and DELETE requests
 - unit testing
-    - create unitTest collection on mongodb
-    - use this data to test GET, POST, etc... (jest has been configured)
+    - create unitTest collection on mongodb?
+    - use this data to test GET, POST, etc with supertest

@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
 import TestModels from '../models/testSchema';
 // import { ITestModel }  from '../models/testModel';
-import { HEADER_SECRET } from '../config';
+import { HEADER_SECRET } from '../config';    // add this in for security
 
 export class TestController {
     public async getAll(req: Request, res: Response) {
-        // break out into lib?
+        //break out into lib?
         if (req.headers.header_secret !== HEADER_SECRET) {
             res.status(500).json({message: "Permission Denied"});
             return;
