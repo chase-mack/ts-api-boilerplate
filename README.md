@@ -50,6 +50,3 @@ See tsconfig.json for the skinny.
     - validate through API key in header
     - will need to update and rotate API key to keep secure
     - it would be a good idea to use Authentication (username, password) for GET, UPDATE, and DELETE requests
-- unit testing
-    - create unitTest collection on mongodb?
-    - use this data to test GET, POST, etc with supertest
